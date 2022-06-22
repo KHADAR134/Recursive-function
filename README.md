@@ -21,33 +21,38 @@ print the reversed number.
 ## Program:
 ```python
 using System;
-class example
+
+namespace exp7
 {
-    public static void fun(int n)
+    class Program
     {
-        if(n < 1)
+        int rem = 0, rev = 0;
+        public int reverse(int n)
         {
-            
-            return;
+            rem = n % 10;
+            if (rem == 0) return rev;
+            else
+            {
+                rev = rev * 10 + rem;
+                return reverse(n / 10);
+            }
         }
-        else
+        static void Main(string[] args)
         {
-            Console.Write(n % 10);
-            fun(n / 10);
+            int n;
+            Console.WriteLine("Enter a Number to reverse: ");
+            n = Convert.ToInt32(Console.ReadLine());
+
+            Program p1 = new Program();
+            Console.WriteLine("Reversed Number is "+ p1.reverse(n));
         }
-    }
-    public static void Main()
-    {
-        int i;
-        i = Convert.ToInt32(Console.ReadLine());
-        fun(123);
-        
     }
 }
 ```
 ## Output:
 
-![EXP7](https://user-images.githubusercontent.com/75235233/170913024-51372587-3aea-43b5-abc2-4a4b80f2feed.png)
+![Screenshot 2022-06-20 012320](https://user-images.githubusercontent.com/75235233/175008941-ddd494d5-b663-404a-8534-9b2af7c7edb0.png)
+
 
 
 ## Result:
